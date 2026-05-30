@@ -2,276 +2,261 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mijn CV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kobe Lodewyckx | CV</title>
 
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg: #0b0f19;
-      --card: #111827;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #60a5fa;
-      --border: rgba(255,255,255,0.08);
+    :root{
+      --bg:#0b0f19;
+      --card:#111827;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --accent:#60a5fa;
+      --border:rgba(255,255,255,0.08);
     }
 
-    [data-theme="light"] {
-      --bg: #f9fafb;
-      --card: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --border: rgba(0,0,0,0.08);
+    [data-theme="light"]{
+      --bg:#f9fafb;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --border:rgba(0,0,0,0.1);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Inter, sans-serif;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Inter, sans-serif;
     }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+    body{
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
+    .container{
+      max-width:1000px;
+      margin:auto;
+      padding:40px 20px;
     }
 
-    /* NAV */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 40px;
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:40px;
     }
 
-    .btn {
-      padding: 10px 14px;
-      border: 1px solid var(--border);
-      background: var(--card);
-      color: var(--text);
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.2s;
-      text-decoration: none;
-      display: inline-block;
+    .btn{
+      padding:10px 14px;
+      border:1px solid var(--border);
+      background:var(--card);
+      color:var(--text);
+      border-radius:10px;
+      text-decoration:none;
+      cursor:pointer;
+      transition:0.2s;
+      display:inline-block;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      border-color: var(--accent);
+    .btn:hover{
+      transform:translateY(-2px);
+      border-color:var(--accent);
     }
 
-    /* HERO */
-    .hero {
-      display: flex;
-      gap: 30px;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-bottom: 60px;
+    .hero{
+      display:flex;
+      gap:30px;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-bottom:60px;
     }
 
-    .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--accent);
+    .avatar{
+      width:130px;
+      height:130px;
+      border-radius:50%;
+      object-fit:cover;
+      border:3px solid var(--accent);
     }
 
-    h1 {
-      font-size: 40px;
+    h1{font-size:42px;}
+    h2{margin-bottom:15px;}
+
+    .muted{color:var(--muted);}
+
+    section{margin-bottom:50px;}
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      padding:20px;
+      border-radius:14px;
+      margin-bottom:12px;
+      transition:0.2s;
     }
 
-    .subtitle {
-      color: var(--muted);
-      margin-top: 5px;
+    .card:hover{
+      transform:translateY(-3px);
+      border-color:var(--accent);
     }
 
-    .cta {
-      margin-top: 15px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:10px;
     }
 
-    /* SECTIONS */
-    section {
-      margin-bottom: 50px;
+    iframe{
+      width:100%;
+      height:250px;
+      border-radius:12px;
+      border:none;
     }
 
-    h2 {
-      margin-bottom: 15px;
-      font-size: 22px;
+    footer{
+      text-align:center;
+      color:var(--muted);
+      margin-top:60px;
+      font-size:14px;
     }
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      padding: 20px;
-      border-radius: 14px;
-      margin-bottom: 10px;
-      transition: 0.2s;
+    .fade{
+      animation:fadeIn 0.6s ease forwards;
+      opacity:0;
+      transform:translateY(10px);
     }
 
-    .card:hover {
-      transform: translateY(-3px);
-      border-color: var(--accent);
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    /* SKILLS */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .chip {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      font-size: 14px;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      color: var(--muted);
-      margin-top: 60px;
-      font-size: 14px;
-    }
-
-    /* ANIMATIE */
-    .fade {
-      opacity: 0;
-      transform: translateY(10px);
-      animation: fadeIn 0.6s ease forwards;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    @keyframes fadeIn{
+      to{opacity:1;transform:translateY(0);}
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <!-- NAV -->
-    <nav>
-      <strong>Mijn CV</strong>
-      <button class="btn" onclick="toggleTheme()">🌙/☀️</button>
-    </nav>
+  <!-- NAV -->
+  <nav>
+    <strong>Kobe Lodewyckx</strong>
+    <button class="btn" onclick="toggleTheme()">🌙 / ☀️</button>
+  </nav>
 
-    <!-- HERO -->
-    <div class="hero fade">
-      <img class="avatar" src="https://raw.githubusercontent.com/KobeLodewyckx/kobelodewyckx.github.io/main/profile.png" alt="Profielfoto">
+  <!-- HERO -->
+  <div class="hero fade">
+    <img class="avatar" src="pfp.jpeg" alt="Kobe Lodewyckx">
 
-      <div>
-        <h1>Kobe Lodewyckxx</h1>
-        <div class="subtitle">Communicatie/Scriptwriter/Regie/Journalistiek</div>
+    <div>
+      <h1>Kobe Lodewyckx</h1>
+      <div class="muted">Communicatie • Media • Scriptwriting • Journalistiek</div>
 
-        <div class="cta">
-          <a class="btn" href="#">Download CV</a>
-          <a class="btn" href="mailto:example@email.com">Contact</a>
-        </div>
+      <p style="margin-top:10px; max-width:600px;">
+        Creatieve storyteller met ervaring in film, media, theater en communicatie.
+      </p>
+
+      <div style="margin-top:15px; display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn" href="mailto:Kobe.lodewyckx@hotmail.com">Contact</a>
+        <a class="btn" href="https://www.linkedin.com/in/kobe-lodewyckx-845508266/">LinkedIn</a>
       </div>
     </div>
-
-    <!-- OVER MIJ -->
-    <section class="fade">
-      <h2>Over mij</h2>
-      <div class="card">
-        Ik ben een developer met interesse in moderne webtechnologieën zoals HTML, CSS, JavaScript en frameworks zoals React.
-        Ik focus op het bouwen van snelle, schaalbare en gebruiksvriendelijke webapplicaties.
-      </div>
-    </section>
-
-    <!-- ERVARING -->
-    <section class="fade">
-      <h2>Ervaring</h2>
-
-      <div class="card">
-        <strong>Frontend Developer</strong> – Bedrijf X<br>
-        <span class="muted">2024 - heden</span><br>
-        Werken aan moderne webapps met React en API-integraties.
-      </div>
-
-      <div class="card">
-        <strong>Stage Web Developer</strong> – Bedrijf Y<br>
-        <span class="muted">2023 - 2024</span><br>
-        Websites gebouwd en geoptimaliseerd voor performance.
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="fade">
-      <h2>Skills</h2>
-      <div class="skills">
-        <div class="chip">HTML</div>
-        <div class="chip">CSS</div>
-        <div class="chip">JavaScript</div>
-        <div class="chip">React</div>
-        <div class="chip">Node.js</div>
-        <div class="chip">GitHub</div>
-      </div>
-    </section>
-
-    <!-- PROJECTEN -->
-    <section class="fade">
-      <h2>Projecten</h2>
-
-      <div class="card">
-        <strong>Portfolio Website</strong><br>
-        Moderne portfolio gebouwd met HTML/CSS/JS.
-      </div>
-
-      <div class="card">
-        <strong>To-do App</strong><br>
-        React app met local storage en CRUD functies.
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="fade">
-      <h2>Contact</h2>
-      <div class="card">
-        Email: <a href="mailto:Kobe.lodewyckx@hotmail.com">Kobe.lodewyckx@hotmail.com</a><br>
-        GitHub: <a href="#">github.com/KobeLodewyckx</a><br>
-        LinkedIn: <a href="#">https://www.linkedin.com/in/kobe-lodewyckx-845508266/</a>
-      </div>
-    </section>
-
-    <footer>
-      © 2026 Kobe Lodewyckx — Gebouwd met GitHub Pages
-    </footer>
-
   </div>
 
-  <script>
-    function toggleTheme() {
-      const root = document.documentElement;
-      const current = root.getAttribute("data-theme");
-      root.setAttribute("data-theme", current === "light" ? "" : "light");
-    }
-  </script>
+  <!-- PROFIEL -->
+  <section class="fade">
+    <h2>Profiel</h2>
+    <div class="card">
+      23-jarige alumnus van Thomas More en KU Leuven. Ambitieus, sportief, sociaal en ruimdenkend met een creatieve en leergierige mindset.
+    </div>
+  </section>
+
+  <!-- OPLEIDING -->
+  <section class="fade">
+    <h2>Opleidingen</h2>
+
+    <div class="card">2024–2025 — BATAC Film Virtual Production (Thomas More Mechelen)</div>
+    <div class="card">2020–2024 — Master Communicatiewetenschappen (KU Leuven)</div>
+    <div class="card">2020–2023 — Bachelor Communicatiewetenschappen (KU Leuven)</div>
+    <div class="card">–2020 — Economie-Wiskunde (Middelbare school)</div>
+  </section>
+
+  <!-- ERVARING -->
+  <section class="fade">
+    <h2>Ervaring</h2>
+
+    <div class="card">
+      🎾 Tennisleerkracht – TC Mol (2017–2026)<br>
+      <span class="muted">Coaching, communicatie, werken met diverse doelgroepen.</span>
+    </div>
+
+    <div class="card">
+      🎭 vzw Ootello (2019–heden)<br>
+      Regie, acteren, productie & bestuursrol + externe communicatie.
+    </div>
+
+    <div class="card">
+      🏥 Heilig Hartziekenhuis Mol (2023–2026)<br>
+      Logistieke hulp met hoge verantwoordelijkheid en precisie.
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="fade">
+    <h2>Skills</h2>
+
+    <div class="grid">
+      <div class="card">Communicatie</div>
+      <div class="card">Scriptwriting</div>
+      <div class="card">Regie</div>
+      <div class="card">Journalistiek</div>
+      <div class="card">Teamwork</div>
+      <div class="card">Stressbestendig</div>
+    </div>
+  </section>
+
+  <!-- PROJECTEN -->
+  <section class="fade">
+    <h2>Projecten</h2>
+
+    <div class="card">
+      🎬 Tweestrijd (kortfilm)<br><br>
+      <iframe src="https://www.youtube.com/embed/SYFdW2PNj0o"></iframe>
+    </div>
+
+    <div class="card">
+      🎬 Unofficial Pub van Royco<br><br>
+      <iframe src="https://www.youtube.com/embed/l8mFmrJkedk"></iframe>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="fade">
+    <h2>Contact</h2>
+
+    <div class="card">
+      📧 Kobe.lodewyckx@hotmail.com<br>
+      📞 +23468227560<br>
+      🔗 LinkedIn: linkedin.com/in/kobe-lodewyckx-845508266
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Kobe Lodewyckx — CV Portfolio
+  </footer>
+
+</div>
+
+<script>
+  function toggleTheme(){
+    const root=document.documentElement;
+    root.setAttribute("data-theme",
+      root.getAttribute("data-theme")==="light" ? "" : "light"
+    );
+  }
+</script>
+
 </body>
 </html>
