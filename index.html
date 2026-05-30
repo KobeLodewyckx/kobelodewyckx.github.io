@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kobe Lodewyckx | CV</title>
+<title>Kobe Lodewyckx | Portfolio CV</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -13,10 +13,15 @@
   --card:#111827;
   --text:#e5e7eb;
   --muted:#9ca3af;
-  --accent:#60a5fa;
+
+  --accent1:#60a5fa;
+  --accent2:#a78bfa;
+  --accent3:#34d399;
+
   --border:rgba(255,255,255,0.08);
 }
 
+/* LIGHT MODE */
 [data-theme="light"]{
   --bg:#f9fafb;
   --card:#ffffff;
@@ -38,9 +43,17 @@ html{
 }
 
 body{
-  background: radial-gradient(circle at top, #111827, var(--bg));
+  background:
+    radial-gradient(circle at 20% 20%, rgba(96,165,250,0.12), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(167,139,250,0.10), transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(52,211,153,0.06), transparent 50%),
+    #0b0f19;
+
   color:var(--text);
   line-height:1.6;
+  letter-spacing:0.2px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
 
 /* PROGRESS BAR */
@@ -50,7 +63,7 @@ body{
   left:0;
   height:3px;
   width:0%;
-  background:linear-gradient(90deg,var(--accent),#a78bfa);
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
   z-index:9999;
 }
 
@@ -61,7 +74,7 @@ body{
   padding:40px 20px;
 }
 
-/* GLASS NAV */
+/* NAV (GLASS) */
 .nav{
   position:sticky;
   top:10px;
@@ -75,7 +88,7 @@ body{
   border-radius:16px;
 
   background:rgba(17,24,39,0.6);
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(14px);
   border:1px solid var(--border);
 
   margin-bottom:40px;
@@ -90,12 +103,12 @@ body{
   border-radius:10px;
   text-decoration:none;
   cursor:pointer;
-  transition:0.3s;
+  transition:0.25s ease;
 }
 
 .btn:hover{
   transform:translateY(-3px);
-  border-color:var(--accent);
+  border-color:var(--accent1);
   box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
@@ -118,18 +131,18 @@ body{
   border:1px solid var(--border);
 
   color:var(--text);
-  font-weight:600;
   text-decoration:none;
+  font-weight:600;
 
-  transition:0.3s;
+  transition:0.25s ease;
   position:relative;
   overflow:hidden;
 }
 
 .icon-btn:hover{
   transform:translateY(-5px) scale(1.08);
-  border-color:var(--accent);
-  box-shadow:0 15px 30px rgba(0,0,0,0.4);
+  border-color:var(--accent2);
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
 .icon-btn.download::after{
@@ -137,7 +150,7 @@ body{
   position:absolute;
   inset:-2px;
   background:linear-gradient(45deg,transparent,rgba(96,165,250,0.5),transparent);
-  animation:glow 2s infinite linear;
+  animation:glow 2s linear infinite;
   opacity:0;
 }
 
@@ -164,9 +177,11 @@ body{
   height:150px;
   border-radius:50%;
   object-fit:cover;
-  border:3px solid var(--accent);
-  box-shadow:0 0 25px rgba(96,165,250,0.4);
-  transition:0.3s;
+  border:3px solid var(--accent1);
+  box-shadow:
+    0 0 25px rgba(96,165,250,0.4),
+    0 0 60px rgba(167,139,250,0.15);
+  transition:0.3s ease;
 }
 
 .avatar:hover{
@@ -187,12 +202,12 @@ h1{
 
 /* SECTIONS */
 section{
-  margin-bottom:110px;
+  margin-bottom:120px;
 }
 
 h2{
   font-size:22px;
-  margin-bottom:20px;
+  margin-bottom:24px;
   position:relative;
 }
 
@@ -201,25 +216,27 @@ h2::after{
   display:block;
   width:40px;
   height:3px;
-  background:var(--accent);
   margin-top:8px;
   border-radius:2px;
+  background:linear-gradient(90deg,var(--accent1),var(--accent2),var(--accent3));
 }
 
 /* CARDS */
 .card{
-  background:var(--card);
+  background:linear-gradient(145deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));
   border:1px solid var(--border);
-  padding:26px;
+  padding:28px;
   border-radius:18px;
-  margin-bottom:16px;
-  transition:0.3s;
+  margin-bottom:18px;
+  transition:0.3s ease;
 }
 
 .card:hover{
   transform:translateY(-8px) scale(1.01);
-  border-color:var(--accent);
-  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+  border-color:var(--accent1);
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.35),
+    0 10px 30px rgba(96,165,250,0.10);
 }
 
 /* GRID */
@@ -229,12 +246,113 @@ h2::after{
   gap:12px;
 }
 
-/* VIDEO */
+/* PROJECTS */
 iframe{
   width:100%;
   height:260px;
   border:none;
+  border-radius:14px;
+}
+
+/* CINEMATIC GRID */
+.cinematic-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.tile{
+  position:relative;
+  overflow:hidden;
+  border-radius:16px;
+  border:1px solid var(--border);
+  height:220px;
+  cursor:pointer;
+}
+
+.tile img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:scale(1.05);
+  transition:0.6s ease;
+}
+
+.tile:hover img{
+  transform:scale(1.15);
+  filter:brightness(0.7);
+}
+
+.caption{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:14px;
+  color:white;
+  font-size:14px;
+  background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);
+  opacity:0;
+  transform:translateY(10px);
+  transition:0.4s ease;
+}
+
+.tile:hover .caption{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* LIGHTBOX */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.92);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  backdrop-filter:blur(14px);
+}
+
+.lightbox-inner{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  max-width:90%;
+}
+
+.lightbox-content{
+  text-align:center;
+}
+
+.lightbox img{
+  max-width:75vw;
+  max-height:75vh;
+  border-radius:18px;
+  box-shadow:0 30px 80px rgba(0,0,0,0.6);
+}
+
+.lightbox p{
+  color:white;
+  margin-top:10px;
+  opacity:0.8;
+}
+
+.navbtn{
+  width:50px;
+  height:50px;
   border-radius:12px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,0.05);
+  color:white;
+  font-size:28px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.navbtn:hover{
+  transform:scale(1.1);
+  background:rgba(96,165,250,0.2);
 }
 
 /* FOOTER */
@@ -244,26 +362,11 @@ footer{
   margin-top:60px;
   font-size:14px;
 }
-
-/* ANIMATION */
-.fade{
-  animation:fadeIn 0.9s ease forwards;
-  opacity:0;
-  transform:translateY(30px);
-}
-
-@keyframes fadeIn{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
 </style>
 </head>
 
 <body>
 
-<!-- PROGRESS -->
 <div id="progress"></div>
 
 <div class="container">
@@ -275,119 +378,160 @@ footer{
 </div>
 
 <!-- HERO -->
-<div class="hero fade">
-  <img class="avatar" src="pfp.jpg" alt="Kobe Lodewyckx">
+<div class="hero">
+  <img class="avatar" src="pfp.jpg">
 
   <div>
     <h1>Kobe Lodewyckx</h1>
     <div class="subtitle">Communicatie • Media • Scriptwriting • Journalistiek</div>
 
-    <p style="margin-top:10px; max-width:600px;">
-      Creatieve storyteller met ervaring in film, media, theater en communicatie.
-    </p>
-
     <div class="hero-buttons">
-
       <a class="icon-btn" href="mailto:Kobe.lodewyckx@hotmail.com">✉</a>
-
-      <a class="icon-btn" href="https://www.linkedin.com/in/kobe-lodewyckx-845508266/" target="_blank">in</a>
-
-      <a class="icon-btn download" href="CV.pdf" download>CV</a>
-
+      <a class="icon-btn" href="https://linkedin.com" target="_blank">in</a>
+      <a class="icon-btn download" href="cv.pdf" download>⬇</a>
     </div>
   </div>
 </div>
 
 <!-- PROFIEL -->
-<section class="fade">
+<section>
 <h2>Profiel</h2>
 <div class="card">
-23-jarige alumnus van Thomas More en KU Leuven. Ambitieus, sociaal, creatief en communicatief sterk.
+23-jarige alumnus KU Leuven & Thomas More. Creatief, ambitieus en sterk in media, storytelling en productie.
 </div>
 </section>
 
 <!-- OPLEIDING -->
-<section class="fade">
+<section>
 <h2>Opleiding</h2>
-
-<div class="card">2024–2025 — BATAC Film Virtual Production (Thomas More)</div>
-<div class="card">2020–2024 — Master Communicatiewetenschappen (KU Leuven)</div>
-<div class="card">2020–2023 — Bachelor Communicatiewetenschappen (KU Leuven)</div>
-<div class="card">...–2020 — Economie-Wiskunde</div>
+<div class="card">BATAC Film Virtual Production — Thomas More</div>
+<div class="card">Master Communicatiewetenschappen — KU Leuven</div>
+<div class="card">Bachelor Communicatiewetenschappen — KU Leuven</div>
 </section>
 
 <!-- ERVARING -->
-<section class="fade">
+<section>
 <h2>Ervaring</h2>
-
-<div class="card">🎾 Tennisleerkracht – TC Mol (2017–2026)</div>
-<div class="card">🎭 vzw Ootello – Regie / Acteur / Bestuur (2019–heden)</div>
-<div class="card">🏥 Heilig Hartziekenhuis Mol – Logistiek (2023–2026)</div>
+<div class="card">Tenniscoach — TC Mol</div>
+<div class="card">Regie/Acteur — vzw Ootello</div>
+<div class="card">Logistiek — Heilig Hartziekenhuis Mol</div>
 </section>
 
 <!-- SKILLS -->
-<section class="fade">
+<section>
 <h2>Skills</h2>
-
 <div class="grid">
 <div class="card">Communicatie</div>
 <div class="card">Scriptwriting</div>
 <div class="card">Regie</div>
 <div class="card">Journalistiek</div>
-<div class="card">Teamwork</div>
-<div class="card">Stressbestendig</div>
 </div>
 </section>
 
 <!-- PROJECTS -->
-<section class="fade">
+<section>
 <h2>Projecten</h2>
-
 <div class="card">
 <h3>Tweestrijd</h3>
 <iframe src="https://www.youtube.com/embed/SYFdW2PNj0o"></iframe>
 </div>
 
 <div class="card">
-<h3>Unofficial Pub Royco</h3>
+<h3>Royco Pub</h3>
 <iframe src="https://www.youtube.com/embed/l8mFmrJkedk"></iframe>
 </div>
+</section>
 
+<!-- VISUAL WORK -->
+<section>
+<h2>Visueel werk</h2>
+
+<div class="cinematic-grid">
+
+  <div class="tile" onclick="openLightbox(0)">
+    <img src="foto1.jpg"><div class="caption">Behind the scenes</div>
+  </div>
+
+  <div class="tile" onclick="openLightbox(1)">
+    <img src="foto2.jpg"><div class="caption">Set lighting</div>
+  </div>
+
+  <div class="tile" onclick="openLightbox(2)">
+    <img src="foto3.jpg"><div class="caption">Production still</div>
+  </div>
+
+</div>
 </section>
 
 <!-- CONTACT -->
-<section class="fade">
+<section>
 <h2>Contact</h2>
-
 <div class="card">
-📧 Kobe.lodewyckx@hotmail.com<br>
-📞 +23468227560<br>
-🔗 LinkedIn beschikbaar via icon bovenaan
+Email: Kobe.lodewyckx@hotmail.com<br>
+Tel: +23468227560
 </div>
 </section>
 
-<footer>
-© 2026 Kobe Lodewyckx — Premium Portfolio CV
-</footer>
+<footer>© 2026 Kobe Lodewyckx</footer>
 
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-inner" onclick="event.stopPropagation()">
+    <button class="navbtn" onclick="prev()">‹</button>
+
+    <div class="lightbox-content">
+      <img id="lbimg">
+      <p id="lbcap"></p>
+    </div>
+
+    <button class="navbtn" onclick="next()">›</button>
+  </div>
 </div>
 
 <script>
 
-/* THEME */
+const images = [
+  {src:"foto1.jpg", cap:"Behind the scenes"},
+  {src:"foto2.jpg", cap:"Set lighting"},
+  {src:"foto3.jpg", cap:"Production still"}
+];
+
+let i = 0;
+
+function openLightbox(index){
+  i = index;
+  show();
+  document.getElementById("lightbox").style.display="flex";
+}
+
+function show(){
+  document.getElementById("lbimg").src = images[i].src;
+  document.getElementById("lbcap").innerText = images[i].cap;
+}
+
+function next(){ i=(i+1)%images.length; show(); }
+function prev(){ i=(i-1+images.length)%images.length; show(); }
+
+function closeLightbox(){
+  document.getElementById("lightbox").style.display="none";
+}
+
 function toggleTheme(){
-  const root=document.documentElement;
-  root.setAttribute("data-theme",
-    root.getAttribute("data-theme")==="light" ? "" : "light"
+  document.documentElement.setAttribute(
+    "data-theme",
+    document.documentElement.getAttribute("data-theme")==="light" ? "" : "light"
   );
 }
 
-/* SCROLL PROGRESS */
-window.addEventListener("scroll", () => {
-  const scrollTop = document.documentElement.scrollTop;
-  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = (scrollTop / scrollHeight) * 100;
-  document.getElementById("progress").style.width = progress + "%";
+window.addEventListener("scroll", ()=>{
+  const s=document.documentElement.scrollTop;
+  const h=document.documentElement.scrollHeight - innerHeight;
+  document.getElementById("progress").style.width=(s/h)*100+"%";
 });
 
 </script>
+
+</body>
+</html>
