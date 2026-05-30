@@ -6,16 +6,16 @@
 
 <title>Kobe Lodewyckx | Portfolio</title>
 
+<!-- FONT + ICONS -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root{
   --bg:#0b0f19;
   --text:#e5e7eb;
   --muted:#9ca3af;
-  --accent1:#60a5fa;
-  --accent2:#a78bfa;
-  --accent3:#34d399;
+  --accent:#60a5fa;
   --border:rgba(255,255,255,0.08);
 }
 
@@ -27,32 +27,9 @@ body{
   background:
     radial-gradient(circle at 20% 20%, rgba(96,165,250,0.12), transparent 40%),
     radial-gradient(circle at 80% 30%, rgba(167,139,250,0.10), transparent 45%),
-    radial-gradient(circle at 50% 80%, rgba(52,211,153,0.06), transparent 50%),
     #0b0f19;
   color:var(--text);
   line-height:1.6;
-}
-
-/* PROGRESS BAR */
-#progress{
-  position:fixed;
-  top:0;left:0;
-  height:3px;
-  width:0%;
-  background:linear-gradient(90deg,var(--accent1),var(--accent2));
-  z-index:9999;
-}
-
-/* CURSOR */
-.cursor{
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  background:var(--accent1);
-  position:fixed;
-  pointer-events:none;
-  transform:translate(-50%,-50%);
-  z-index:99999;
 }
 
 /* CONTAINER */
@@ -62,19 +39,39 @@ body{
   padding:40px 20px;
 }
 
-/* NAV */
-.nav{
-  position:sticky;
-  top:12px;
+/* ICON BAR */
+.top-icons{
   display:flex;
-  justify-content:space-between;
+  justify-content:center;
+  gap:14px;
+  margin-bottom:25px;
+}
+
+.icon{
+  width:44px;
+  height:44px;
+  display:flex;
   align-items:center;
-  padding:14px 18px;
-  border-radius:16px;
-  background:rgba(17,24,39,0.6);
-  backdrop-filter:blur(16px);
+  justify-content:center;
+  border-radius:12px;
   border:1px solid var(--border);
-  margin-bottom:40px;
+  background:rgba(255,255,255,0.03);
+  transition:0.3s;
+  text-decoration:none;
+}
+
+.icon i{
+  font-size:18px;
+  color:var(--text);
+}
+
+.icon:hover{
+  transform:translateY(-3px);
+  border-color:var(--accent);
+}
+
+.icon:hover i{
+  color:var(--accent);
 }
 
 /* HERO */
@@ -91,52 +88,43 @@ body{
   height:140px;
   border-radius:50%;
   object-fit:cover;
-  border:3px solid var(--accent1);
-  box-shadow:0 0 40px rgba(96,165,250,0.35);
+  border:3px solid var(--accent);
 }
 
 h1{font-size:48px;}
 p{color:var(--muted);}
 
-/* SECTION */
+/* SECTIONS */
 section{
-  margin-bottom:120px;
-  opacity:0;
-  transform:translateY(20px);
-  transition:0.7s ease;
-}
-
-section.visible{
-  opacity:1;
-  transform:translateY(0);
+  margin-bottom:90px;
 }
 
 h2{
-  margin-bottom:20px;
+  margin-bottom:18px;
 }
 
 h2::after{
   content:"";
   display:block;
-  width:45px;
+  width:40px;
   height:3px;
   margin-top:8px;
-  background:linear-gradient(90deg,var(--accent1),var(--accent2),var(--accent3));
+  background:var(--accent);
 }
 
 /* CARD */
 .card{
   background:rgba(255,255,255,0.03);
   border:1px solid var(--border);
-  padding:20px;
-  border-radius:16px;
-  margin-bottom:12px;
+  padding:18px;
+  border-radius:14px;
+  margin-bottom:10px;
 }
 
 /* VIDEO */
 .video-card{
-  margin-bottom:22px;
-  border-radius:16px;
+  margin-bottom:20px;
+  border-radius:14px;
   overflow:hidden;
   border:1px solid var(--border);
 }
@@ -154,7 +142,7 @@ h2::after{
 }
 
 /* GRID */
-.cinematic-grid{
+.grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:12px;
@@ -162,24 +150,23 @@ h2::after{
 
 .tile{
   height:210px;
-  position:relative;
-  overflow:hidden;
   border-radius:14px;
-  cursor:pointer;
+  overflow:hidden;
+  position:relative;
   border:1px solid var(--border);
+  cursor:pointer;
 }
 
 .tile img{
   width:100%;
   height:100%;
   object-fit:cover;
-  transform:scale(1.05);
   transition:0.5s;
 }
 
 .tile:hover img{
-  transform:scale(1.2);
-  filter:brightness(0.65);
+  transform:scale(1.15);
+  filter:brightness(0.7);
 }
 
 .caption{
@@ -187,8 +174,8 @@ h2::after{
   bottom:0;
   width:100%;
   padding:10px;
-  color:white;
   font-size:13px;
+  color:white;
   background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);
   opacity:0;
 }
@@ -199,7 +186,7 @@ h2::after{
 .lightbox{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.94);
+  background:rgba(0,0,0,0.95);
   display:none;
   align-items:center;
   justify-content:center;
@@ -209,25 +196,26 @@ h2::after{
 .lightbox img{
   max-width:80vw;
   max-height:80vh;
-  border-radius:16px;
+  border-radius:14px;
 }
 
 .navbtn{
-  width:45px;height:45px;
+  width:45px;
+  height:45px;
   border-radius:10px;
   border:1px solid var(--border);
   background:rgba(255,255,255,0.1);
   color:white;
-  font-size:24px;
+  font-size:22px;
   cursor:pointer;
 }
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  .cinematic-grid{grid-template-columns:repeat(2,1fr);}
+  .grid{grid-template-columns:repeat(2,1fr);}
 }
 @media(max-width:600px){
-  .cinematic-grid{grid-template-columns:1fr;}
+  .grid{grid-template-columns:1fr;}
   h1{font-size:36px;}
 }
 </style>
@@ -235,37 +223,51 @@ h2::after{
 
 <body>
 
-<div class="cursor"></div>
-<div id="progress"></div>
-
 <div class="container">
 
-<div class="nav">
-  <strong>Kobe Lodewyckx</strong>
+<!-- ICON BAR -->
+<div class="top-icons">
+
+<a class="icon" href="cv.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i></a>
+<a class="icon" href="mailto:Kobe.lodewyckx@hotmail.com"><i class="fa-solid fa-envelope"></i></a>
+<a class="icon" href="https://www.linkedin.com/in/kobe-lodewyckx-845508266/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+<a class="icon" href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+<a class="icon" href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+
 </div>
 
 <!-- HERO -->
 <div class="hero">
-  <img class="avatar" src="pfp.jpg">
-  <div>
-    <h1>Kobe Lodewyckx</h1>
-    <p>Media • Film • Scriptwriting • Journalistiek</p>
-    <p>Email: Kobe.lodewyckx@hotmail.com</p>
-    <p>Tel: +23468227560</p>
-    <p>
-      <a href="https://www.linkedin.com/in/kobe-lodewyckx-845508266/" style="color:#60a5fa;" target="_blank">
-        LinkedIn profiel
-      </a>
-    </p>
-  </div>
+<img class="avatar" src="pfp.jpg">
+<div>
+<h1>Kobe Lodewyckx</h1>
+<p>Media • Film • Scriptwriting • Journalistiek</p>
+</div>
 </div>
 
 <!-- PROFIEL -->
 <section>
 <h2>Profiel</h2>
 <div class="card">
-23-jarige alumni aan Thomas More en KU Leuven. Ambitieus, sportief, sociaal en creatief profiel met focus op media, film en journalistiek.
+23-jarige alumni aan KU Leuven en Thomas More. Creatief, sociaal en sterk in media, film en storytelling.
 </div>
+</section>
+
+<!-- OPLEIDINGEN -->
+<section>
+<h2>Opleidingen</h2>
+<div class="card">2024–2025 : BATAC Film Virtual Production (Thomas More)</div>
+<div class="card">2020–2023 : Master Communicatiewetenschappen (KU Leuven)</div>
+<div class="card">2020–2023 : Bachelor Communicatiewetenschappen (KU Leuven)</div>
+<div class="card">...–2020 : Economie-Wiskunde secundair</div>
+</section>
+
+<!-- JOBS -->
+<section>
+<h2>Werkervaring</h2>
+<div class="card">Tenniscoach — TC Mol (2017–2026)</div>
+<div class="card">Logistieke hulp — Heilig Hartziekenhuis Mol (2023–2026)</div>
+<div class="card">Acteur / Regisseur / Bestuur — vzw Ootello (2019–heden)</div>
 </section>
 
 <!-- VIDEO -->
@@ -283,44 +285,26 @@ h2::after{
 <iframe src="https://www.youtube.com/embed/l8mFmrJkedk"></iframe>
 </div>
 </div>
+
 </section>
 
-<!-- TIMELINE -->
+<!-- PORTFOLIO -->
 <section>
-<h2>Timeline</h2>
-<div class="card">2024–2025 — BATAC Film Virtual Production</div>
-<div class="card">2020–2024 — KU Leuven Master Communicatiewetenschappen</div>
-<div class="card">2023–2026 — Logistieke hulp Heilig Hartziekenhuis Mol</div>
-<div class="card">2019–heden — vzw Ootello (acteur/regisseur/bestuur)</div>
-<div class="card">2017–2026 — Tenniscoach TC Mol</div>
-</section>
+<h2>Portfolio</h2>
 
-<!-- VISUAL GRID -->
-<section>
-<h2>Visueel werk</h2>
+<div class="grid">
 
-<div class="cinematic-grid">
+<div class="tile" onclick="openLightbox(0)"><img src="foto1.jpg"><div class="caption">Project</div></div>
+<div class="tile" onclick="openLightbox(1)"><img src="foto3.jpg"><div class="caption">Project</div></div>
+<div class="tile" onclick="openLightbox(2)"><img src="foto4.jpg"><div class="caption">Project</div></div>
+<div class="tile" onclick="openLightbox(3)"><img src="foto6.jpg"><div class="caption">Project</div></div>
+<div class="tile" onclick="openLightbox(4)"><img src="foto7.jpg"><div class="caption">Project</div></div>
+<div class="tile" onclick="openLightbox(5)"><img src="foto8.jpg"><div class="caption">Project</div></div>
+<div class="tile" onclick="openLightbox(6)"><img src="foto10.jpg"><div class="caption">Project</div></div>
+<div class="tile" onclick="openLightbox(7)"><img src="foto11.jpg"><div class="caption">Project</div></div>
+<div class="tile" onclick="openLightbox(8)"><img src="foto12.jpg"><div class="caption">Project</div></div>
+<div class="tile" onclick="openLightbox(9)"><img src="foto13.jpg"><div class="caption">Project</div></div>
 
-<div class="tile" onclick="openLightbox(0)"><img src="foto1.jpg"><div class="caption">Project 1</div></div>
-<div class="tile" onclick="openLightbox(1)"><img src="foto3.jpg"><div class="caption">Project 2</div></div>
-<div class="tile" onclick="openLightbox(2)"><img src="foto4.jpg"><div class="caption">Project 3</div></div>
-<div class="tile" onclick="openLightbox(3)"><img src="foto6.jpg"><div class="caption">Project 4</div></div>
-<div class="tile" onclick="openLightbox(4)"><img src="foto7.jpg"><div class="caption">Project 5</div></div>
-<div class="tile" onclick="openLightbox(5)"><img src="foto8.jpg"><div class="caption">Project 6</div></div>
-<div class="tile" onclick="openLightbox(6)"><img src="foto10.jpg"><div class="caption">Project 7</div></div>
-<div class="tile" onclick="openLightbox(7)"><img src="foto11.jpg"><div class="caption">Project 8</div></div>
-<div class="tile" onclick="openLightbox(8)"><img src="foto12.jpg"><div class="caption">Project 9</div></div>
-<div class="tile" onclick="openLightbox(9)"><img src="foto13.jpg"><div class="caption">Project 10</div></div>
-
-</div>
-</section>
-
-<!-- CONTACT -->
-<section>
-<h2>Contact</h2>
-<div class="card">
-Email: Kobe.lodewyckx@hotmail.com<br>
-Tel: +32468227560<br>
 </div>
 </section>
 
@@ -328,9 +312,9 @@ Tel: +32468227560<br>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <button class="navbtn" onclick="prev()">‹</button>
-  <img id="lbimg">
-  <button class="navbtn" onclick="next()">›</button>
+<button class="navbtn" onclick="prev()">‹</button>
+<img id="lbimg">
+<button class="navbtn" onclick="next()">›</button>
 </div>
 
 <script>
@@ -355,29 +339,6 @@ document.getElementById("lbimg").src=images[i];
 function next(){i=(i+1)%images.length;show();}
 function prev(){i=(i-1+images.length)%images.length;show();}
 function closeLightbox(){document.getElementById("lightbox").style.display="none";}
-
-/* progress */
-window.addEventListener("scroll",()=>{
-let s=document.documentElement.scrollTop;
-let h=document.documentElement.scrollHeight-innerHeight;
-document.getElementById("progress").style.width=(s/h)*100+"%";
-});
-
-/* reveal */
-const sections=document.querySelectorAll("section");
-const obs=new IntersectionObserver(e=>{
-e.forEach(x=>{
-if(x.isIntersecting)x.target.classList.add("visible");
-});
-},{threshold:0.15});
-sections.forEach(s=>obs.observe(s));
-
-/* cursor */
-const cursor=document.querySelector(".cursor");
-document.addEventListener("mousemove",e=>{
-cursor.style.left=e.clientX+"px";
-cursor.style.top=e.clientY+"px";
-});
 
 </script>
 
