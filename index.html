@@ -6,126 +6,242 @@
 
 <title>Kobe Lodewyckx | Portfolio</title>
 
-<!-- FONT + ICONS -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta name="description"
+content="Portfolio van Kobe Lodewyckx. Regisseur, scriptschrijver, journalist en communicatiespecialist.">
+
+<meta property="og:title" content="Kobe Lodewyckx Portfolio">
+<meta property="og:description" content="Film, media, storytelling en communicatie">
+<meta property="og:image" content="pfp.jpg">
+<meta property="og:type" content="website">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+
 :root{
   --bg:#0b0f19;
-  --text:#e5e7eb;
+  --card:#131a2a;
+  --text:#f3f4f6;
   --muted:#9ca3af;
   --accent:#60a5fa;
-  --border:rgba(255,255,255,0.08);
+  --border:rgba(255,255,255,.08);
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth;}
+html{
+  scroll-behavior:smooth;
+}
 
 body{
-  background:
-    radial-gradient(circle at 20% 20%, rgba(96,165,250,0.12), transparent 40%),
-    radial-gradient(circle at 80% 30%, rgba(167,139,250,0.10), transparent 45%),
-    #0b0f19;
+  font-family:Inter,sans-serif;
   color:var(--text);
-  line-height:1.6;
+  background:
+  radial-gradient(circle at 20% 20%, rgba(96,165,250,.12), transparent 40%),
+  radial-gradient(circle at 80% 30%, rgba(167,139,250,.10), transparent 45%),
+  var(--bg);
+  line-height:1.7;
 }
 
-/* CONTAINER */
 .container{
-  max-width:1050px;
+  max-width:1100px;
   margin:auto;
-  padding:40px 20px;
+  padding:30px 20px;
 }
 
-/* ICON BAR */
-.top-icons{
+/* NAV */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:999;
+  backdrop-filter:blur(12px);
+  background:rgba(11,15,25,.85);
+  border-bottom:1px solid var(--border);
+}
+
+.nav-inner{
+  max-width:1100px;
+  margin:auto;
+  padding:16px 20px;
   display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-weight:700;
+}
+
+.nav-links{
+  display:flex;
+  gap:18px;
+}
+
+.nav-links a{
+  color:var(--muted);
+  text-decoration:none;
+}
+
+.nav-links a:hover{
+  color:var(--accent);
+}
+
+/* HERO */
+
+.hero{
+  min-height:80vh;
+  display:flex;
+  align-items:center;
   justify-content:center;
-  gap:14px;
-  margin-bottom:25px;
+}
+
+.hero-content{
+  display:flex;
+  align-items:center;
+  gap:40px;
+  flex-wrap:wrap;
+}
+
+.avatar{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid var(--accent);
+}
+
+.hero-text h1{
+  font-size:56px;
+  line-height:1.1;
+}
+
+.hero-text p{
+  color:var(--muted);
+  max-width:600px;
+  margin:15px 0;
+}
+
+.buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:12px 20px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.btn-primary{
+  background:var(--accent);
+  color:white;
+}
+
+.btn-secondary{
+  border:1px solid var(--border);
+  color:white;
+}
+
+/* SOCIALS */
+
+.socials{
+  margin-top:25px;
+  display:flex;
+  gap:12px;
 }
 
 .icon{
   width:44px;
   height:44px;
+  border-radius:12px;
   display:flex;
   align-items:center;
   justify-content:center;
-  border-radius:12px;
   border:1px solid var(--border);
-  background:rgba(255,255,255,0.03);
-  transition:0.3s;
   text-decoration:none;
-}
-
-.icon i{
-  font-size:18px;
-  color:var(--text);
+  color:white;
+  transition:.3s;
 }
 
 .icon:hover{
   transform:translateY(-3px);
   border-color:var(--accent);
-}
-
-.icon:hover i{
   color:var(--accent);
 }
 
-/* HERO */
-.hero{
-  display:flex;
-  gap:25px;
-  align-items:center;
-  flex-wrap:wrap;
-  margin-bottom:60px;
-}
-
-.avatar{
-  width:140px;
-  height:140px;
-  border-radius:50%;
-  object-fit:cover;
-  border:3px solid var(--accent);
-}
-
-h1{font-size:48px;}
-p{color:var(--muted);}
-
 /* SECTIONS */
+
 section{
-  margin-bottom:90px;
+  margin-bottom:100px;
 }
 
 h2{
-  margin-bottom:18px;
+  font-size:32px;
+  margin-bottom:25px;
 }
 
 h2::after{
   content:"";
   display:block;
-  width:40px;
-  height:3px;
+  width:60px;
+  height:4px;
   margin-top:8px;
   background:var(--accent);
 }
 
 /* CARD */
+
 .card{
-  background:rgba(255,255,255,0.03);
+  background:rgba(255,255,255,.03);
   border:1px solid var(--border);
-  padding:18px;
-  border-radius:14px;
-  margin-bottom:10px;
+  border-radius:16px;
+  padding:20px;
+  margin-bottom:15px;
+}
+
+/* SKILLS */
+
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.skill{
+  padding:10px 16px;
+  border-radius:999px;
+  background:rgba(96,165,250,.12);
+  border:1px solid rgba(96,165,250,.25);
+}
+
+/* PROJECTS */
+
+.project{
+  margin-bottom:15px;
+}
+
+.project h3{
+  margin-bottom:6px;
+}
+
+.project p{
+  color:var(--muted);
 }
 
 /* VIDEO */
+
 .video-card{
-  margin-bottom:20px;
-  border-radius:14px;
+  margin-bottom:25px;
   overflow:hidden;
+  border-radius:16px;
   border:1px solid var(--border);
 }
 
@@ -141,210 +257,458 @@ h2::after{
   height:100%;
 }
 
-/* GRID */
+/* GALLERY */
+
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:12px;
+  gap:14px;
 }
 
 .tile{
-  height:210px;
-  border-radius:14px;
-  overflow:hidden;
   position:relative;
+  overflow:hidden;
+  border-radius:16px;
   border:1px solid var(--border);
   cursor:pointer;
+  height:220px;
 }
 
 .tile img{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:0.5s;
+  transition:.5s;
 }
 
 .tile:hover img{
-  transform:scale(1.15);
-  filter:brightness(0.7);
+  transform:scale(1.1);
+  filter:brightness(.7);
 }
 
 .caption{
   position:absolute;
   bottom:0;
   width:100%;
-  padding:10px;
-  font-size:13px;
-  color:white;
-  background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);
+  padding:12px;
+  background:linear-gradient(to top,rgba(0,0,0,.8),transparent);
   opacity:0;
+  transition:.3s;
 }
 
-.tile:hover .caption{opacity:1;}
+.tile:hover .caption{
+  opacity:1;
+}
 
 /* LIGHTBOX */
+
 .lightbox{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.95);
+  background:rgba(0,0,0,.95);
   display:none;
-  align-items:center;
   justify-content:center;
+  align-items:center;
+  gap:20px;
   z-index:9999;
 }
 
 .lightbox img{
   max-width:80vw;
   max-height:80vh;
-  border-radius:14px;
+  border-radius:16px;
 }
 
 .navbtn{
-  width:45px;
-  height:45px;
-  border-radius:10px;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,0.1);
+  width:50px;
+  height:50px;
+  border:none;
+  border-radius:12px;
+  background:rgba(255,255,255,.1);
   color:white;
-  font-size:22px;
+  font-size:24px;
   cursor:pointer;
 }
 
-/* RESPONSIVE */
+/* CONTACT */
+
+.contact a{
+  color:var(--accent);
+  text-decoration:none;
+}
+
+footer{
+  text-align:center;
+  color:var(--muted);
+  padding:40px 0;
+}
+
 @media(max-width:900px){
-  .grid{grid-template-columns:repeat(2,1fr);}
+
+.hero-text h1{
+  font-size:42px;
 }
+
+.grid{
+  grid-template-columns:repeat(2,1fr);
+}
+
+}
+
 @media(max-width:600px){
-  .grid{grid-template-columns:1fr;}
-  h1{font-size:36px;}
+
+.grid{
+  grid-template-columns:1fr;
 }
+
+.nav-links{
+  display:none;
+}
+
+.hero{
+  text-align:center;
+}
+
+.hero-content{
+  justify-content:center;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
+<nav>
+<div class="nav-inner">
+<div class="logo">Kobe Lodewyckx</div>
+
+<div class="nav-links">
+<a href="#profiel">Profiel</a>
+<a href="#ervaring">Ervaring</a>
+<a href="#projecten">Projecten</a>
+<a href="#videos">Video's</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+</nav>
+
 <div class="container">
 
-<!-- ICON BAR -->
-<div class="top-icons">
+<section class="hero">
 
-<a class="icon" href="cv.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i></a>
-<a class="icon" href="mailto:Kobe.lodewyckx@hotmail.com"><i class="fa-solid fa-envelope"></i></a>
-<a class="icon" href="https://www.linkedin.com/in/kobe-lodewyckx-845508266/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-<a class="icon" href="https://www.facebook.com/kobe.lodewyckx" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-<a class="icon" href="https://www.instagram.com/kobe_lodewyckx/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+<div class="hero-content">
 
-</div>
+<img class="avatar" src="pfp.jpg" alt="Kobe Lodewyckx">
 
-<!-- HERO -->
-<div class="hero">
-<img class="avatar" src="pfp.jpg">
-<div>
+<div class="hero-text">
+
 <h1>Kobe Lodewyckx</h1>
-<p>Communicatie • Media • Regisseur • Scriptschrijver • Journalistiek</p>
-</div>
+
+<p>
+Master Communicatiewetenschappen met een passie voor film,
+storytelling, journalistiek en contentcreatie.
+Ervaring als regisseur, scriptschrijver, acteur en mediamaker.
+</p>
+
+<div class="buttons">
+<a href="cv.pdf" class="btn btn-primary" download>
+Download CV
+</a>
+
+<a href="#contact" class="btn btn-secondary">
+Contact
+</a>
 </div>
 
-<!-- PROFIEL -->
-<section>
+<div class="socials">
+
+<a class="icon" href="mailto:Kobe.lodewyckx@hotmail.com">
+<i class="fa-solid fa-envelope"></i>
+</a>
+
+<a class="icon"
+href="https://www.linkedin.com/in/kobe-lodewyckx-845508266/"
+target="_blank"
+rel="noopener noreferrer">
+<i class="fa-brands fa-linkedin"></i>
+</a>
+
+<a class="icon"
+href="https://www.instagram.com/kobe_lodewyckx/"
+target="_blank"
+rel="noopener noreferrer">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a class="icon"
+href="https://www.facebook.com/kobe.lodewyckx"
+target="_blank"
+rel="noopener noreferrer">
+<i class="fa-brands fa-facebook"></i>
+</a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="profiel">
 <h2>Profiel</h2>
+
 <div class="card">
-23-jarige alumni aan KU Leuven en Thomas More. Creatief, sociaal en sterk in media, film en storytelling.
+Creatieve mediaprofessional met een achtergrond in communicatie,
+film en journalistiek. Sterk in storytelling, regie,
+scriptontwikkeling en contentcreatie.
 </div>
 </section>
 
-<!-- OPLEIDINGEN -->
 <section>
-<h2>Opleidingen</h2>
-<div class="card">2024–2025 : BATAC Film Virtual Production (Thomas More)</div>
-<div class="card">2020–2023 : Master Communicatiewetenschappen (KU Leuven)</div>
-<div class="card">2020–2023 : Bachelor Communicatiewetenschappen (KU Leuven)</div>
-<div class="card">...–2020 : Economie-Wiskunde secundair</div>
+<h2>Vaardigheden</h2>
+
+<div class="skills">
+<span class="skill">Premiere Pro</span>
+<span class="skill">DaVinci Resolve</span>
+<span class="skill">After Effects</span>
+<span class="skill">Photoshop</span>
+<span class="skill">Storytelling</span>
+<span class="skill">Journalistiek</span>
+<span class="skill">Virtual Production</span>
+<span class="skill">Regie</span>
+<span class="skill">Scenario</span>
+</div>
+
 </section>
 
-<!-- JOBS -->
-<section>
+<section id="ervaring">
+
 <h2>Werkervaring</h2>
-<div class="card">Tenniscoach — TC Mol (2017–2026)</div>
-<div class="card">Logistieke hulp — Heilig Hartziekenhuis Mol (2023–2026)</div>
-<div class="card">Acteur / Regisseur / Bestuur — vzw Ootello (2019–heden)</div>
+
+<div class="card">
+<h3>Tenniscoach — TC Mol</h3>
+<p>2017–heden</p>
+</div>
+
+<div class="card">
+<h3>Logistieke hulp — Heilig Hartziekenhuis Mol</h3>
+<p>2023–heden</p>
+</div>
+
+<div class="card">
+<h3>Acteur / Regisseur / Bestuurder — vzw Ootello</h3>
+<p>2019–heden</p>
+</div>
+
 </section>
 
-<!-- VIDEO -->
-<section>
+<section id="projecten">
+
+<h2>Projecten</h2>
+
+<div class="card project">
+<h3>Tweestrijd</h3>
+<p>Kortfilm — Regie, scenario en productie.</p>
+</div>
+
+<div class="card project">
+<h3>De Laatste Dans</h3>
+<p>Filmproject met focus op storytelling en visuele narratie.</p>
+</div>
+
+<div class="card project">
+<h3>Viewz</h3>
+<p>Stage binnen de mediasector.</p>
+</div>
+
+</section>
+
+<section id="videos">
+
 <h2>Video's</h2>
 
 <div class="video-card">
 <div class="video-frame">
-<iframe src="https://www.youtube.com/embed/SYFdW2PNj0o"></iframe>
+<iframe
+src="https://www.youtube.com/embed/SYFdW2PNj0o"
+loading="lazy"
+allowfullscreen>
+</iframe>
 </div>
 </div>
 
 <div class="video-card">
 <div class="video-frame">
-<iframe src="https://www.youtube.com/embed/l8mFmrJkedk"></iframe>
+<iframe
+src="https://www.youtube.com/embed/l8mFmrJkedk"
+loading="lazy"
+allowfullscreen>
+</iframe>
 </div>
 </div>
 
 </section>
 
-<!-- PORTFOLIO -->
-<section>
+<section id="portfolio">
+
 <h2>Portfolio</h2>
 
 <div class="grid">
 
-<div class="tile" onclick="openLightbox(0)"><img src="pic1.jpg"><div class="caption">Foto: De Laatste Dans</div></div>
-<div class="tile" onclick="openLightbox(1)"><img src="pic2.jpg"><div class="caption">Still: Tweestrijd</div></div>
-<div class="tile" onclick="openLightbox(2)"><img src="pic3.jpg"><div class="caption">Poster: Tweestrijd</div></div>
-<div class="tile" onclick="openLightbox(3)"><img src="pic4.jpg"><div class="caption">BTS: Tweestrijd</div></div>
-<div class="tile" onclick="openLightbox(4)"><img src="pic5.jpg"><div class="caption">BTS: Tweestrijd</div></div>
-<div class="tile" onclick="openLightbox(5)"><img src="pic6.jpg"><div class="caption">Foto: De Kastaars</div></div>
-<div class="tile" onclick="openLightbox(6)"><img src="pic7.jpg"><div class="caption">BTS: Tweestrijd</div></div>
-<div class="tile" onclick="openLightbox(7)"><img src="pic8.jpg"><div class="caption">Promoshoot: Beastie Burgers</div></div>
-<div class="tile" onclick="openLightbox(8)"><img src="pic9.jpg"><div class="caption">BTS: Kasteelbier Tropical</div></div>
-<div class="tile" onclick="openLightbox(9)"><img src="pic10.jpg"><div class="caption">Stagefoto: Viewz</div></div>
+<div class="tile" onclick="openLightbox(0)">
+<img src="pic1.jpg" alt="De Laatste Dans">
+<div class="caption">De Laatste Dans</div>
+</div>
+
+<div class="tile" onclick="openLightbox(1)">
+<img src="pic2.jpg" alt="Tweestrijd">
+<div class="caption">Tweestrijd</div>
+</div>
+
+<div class="tile" onclick="openLightbox(2)">
+<img src="pic3.jpg" alt="Poster Tweestrijd">
+<div class="caption">Poster Tweestrijd</div>
+</div>
+
+<div class="tile" onclick="openLightbox(3)">
+<img src="pic4.jpg" alt="Behind the scenes">
+<div class="caption">Behind The Scenes</div>
+</div>
+
+<div class="tile" onclick="openLightbox(4)">
+<img src="pic5.jpg" alt="Behind the scenes">
+<div class="caption">Behind The Scenes</div>
+</div>
+
+<div class="tile" onclick="openLightbox(5)">
+<img src="pic6.jpg" alt="Kastaars">
+<div class="caption">De Kastaars</div>
+</div>
+
+<div class="tile" onclick="openLightbox(6)">
+<img src="pic7.jpg" alt="Behind the scenes">
+<div class="caption">Behind The Scenes</div>
+</div>
+
+<div class="tile" onclick="openLightbox(7)">
+<img src="pic8.jpg" alt="Beastie Burgers">
+<div class="caption">Beastie Burgers</div>
+</div>
+
+<div class="tile" onclick="openLightbox(8)">
+<img src="pic9.jpg" alt="Kasteelbier">
+<div class="caption">Kasteelbier Tropical</div>
+</div>
+
+<div class="tile" onclick="openLightbox(9)">
+<img src="pic10.jpg" alt="Viewz">
+<div class="caption">Viewz</div>
+</div>
 
 </div>
+
 </section>
-<section>
+
+<section id="contact">
+
 <h2>Contact</h2>
-<div class="card">
-Email: Kobe.lodewyckx@hotmail.com<br>
-Telefoon: +32468227560<br>
-</div>
-</section>
+
+<div class="card contact">
+
+<p>
+Email:
+<a href="mailto:Kobe.lodewyckx@hotmail.com">
+Kobe.lodewyckx@hotmail.com
+</a>
+</p>
+
+<p>
+Telefoon:
+<a href="tel:+32468227560">
++32 468 22 75 60
+</a>
+</p>
+
 </div>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-<button class="navbtn" onclick="prev()">‹</button>
+</section>
+
+<footer>
+© 2026 Kobe Lodewyckx
+</footer>
+
+</div>
+
+<div class="lightbox" id="lightbox">
+
+<button class="navbtn" onclick="event.stopPropagation();prev()">
+‹
+</button>
+
 <img id="lbimg">
-<button class="navbtn" onclick="next()">›</button>
+
+<button class="navbtn" onclick="event.stopPropagation();next()">
+›
+</button>
+
 </div>
 
 <script>
 
-const images=[
-"pic1.jpg","pic2.jpg","pic3.jpg","pic4.jpg","pic5.jpg",
-"pic6.jpg","pic7.jpg","pic8.jpg","pic9.jpg","pic10.jpg"
+const images = [
+"pic1.jpg",
+"pic2.jpg",
+"pic3.jpg",
+"pic4.jpg",
+"pic5.jpg",
+"pic6.jpg",
+"pic7.jpg",
+"pic8.jpg",
+"pic9.jpg",
+"pic10.jpg"
 ];
 
-let i=0;
+let current = 0;
 
 function openLightbox(index){
-i=index;
-show();
-document.getElementById("lightbox").style.display="flex";
+current = index;
+showImage();
+document.getElementById("lightbox").style.display = "flex";
 }
 
-function show(){
-document.getElementById("lbimg").src=images[i];
+function showImage(){
+document.getElementById("lbimg").src = images[current];
 }
 
-function next(){i=(i+1)%images.length;show();}
-function prev(){i=(i-1+images.length)%images.length;show();}
-function closeLightbox(){document.getElementById("lightbox").style.display="none";}
+function next(){
+current = (current + 1) % images.length;
+showImage();
+}
+
+function prev(){
+current = (current - 1 + images.length) % images.length;
+showImage();
+}
+
+function closeLightbox(){
+document.getElementById("lightbox").style.display = "none";
+}
+
+document.getElementById("lightbox")
+.addEventListener("click", closeLightbox);
+
+document.addEventListener("keydown", function(e){
+
+if(document.getElementById("lightbox").style.display !== "flex")
+return;
+
+if(e.key === "ArrowRight") next();
+if(e.key === "ArrowLeft") prev();
+if(e.key === "Escape") closeLightbox();
+
+});
 
 </script>
 
